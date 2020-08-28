@@ -9,7 +9,7 @@ import sys
 sys.path.append(r'C:/Send2Gchat')
 import IronDrive
 
-IronDrive.status("Starting")
+IronDrive.status('Starting simulation...')
 
 ScriptEnv.Initialize("Ansoft.ElectronicsDesktop")
 oDesktop.RestoreWindow()
@@ -17,4 +17,4 @@ oProject = oDesktop.SetActiveProject("PB-SAOA-BLE-11")
 oDesign = oProject.SetActiveDesign("main_cutout_Circuibras:U1")
 oDesign.AnalyzeAllNominal()
 
-IronDrive.status('Doning')
+IronDrive.status('DONE')
