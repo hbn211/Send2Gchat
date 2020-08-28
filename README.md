@@ -12,7 +12,7 @@ pip install httplib2
 
 Tip: USE THE SPYDER IDE
 
->>> ![image-20200828151001584](C:\Send2Gchat\Doc\spyderconfig.png)
+>>> ![image-20200828151001584](.\Doc\spyderconfig.png)
 >>>
 >>> Example
 
