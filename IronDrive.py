@@ -25,6 +25,20 @@ def status(message):
     
     with open(filepath, 'w') as outfile:
         json.dump(data, outfile)
-        
+    
+
+    filepath = os.path.join('c:/Send2Gchat', 'config.json')
+    if not os.path.exists('c:/Send2Gchat'):
+        os.makedirs('c:/Send2Gchat')
+
+    #This will open json config to upload the url and thread if that exists
+    with open(filepath) as json_file:
+        data = json.load(json_file)
+        for p in data['config']:
+            print('Anaconda PATH: ' + p['anaconda3'])
+            print('activated.bat PATH: ' + p['activated.bat'])
+            print('')
+            
     #call the python script to send a message
-    os.system('C:/ProgramData/Anaconda3/Scripts/activate.bat C:/ProgramData/Anaconda3 && python C:/Send2Gchat/Send2Gchat.py')
+    command = p['activated.bat'] + ' ' + p['anaconda3'] + ' && python C:/Send2Gchat/Send2Gchat.py'
+    os.system(command)

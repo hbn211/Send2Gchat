@@ -81,7 +81,9 @@ def Send2Gchat(message):
         data['config'] = []
         data['config'].append({
             'url': p['url'],
-            'thread': thread_json['name'],
+            'thread': thread_json['name'],        
+            'anaconda3': p['anaconda3'],
+            'activated.bat': p['activated.bat']
         })
     
         with open(filepath, 'w') as outfile:
@@ -93,14 +95,37 @@ def Send2Gchat(message):
     return 0
 
 #Function to set the Webhook url | USE THIS FUNCTION ON PYTHON TERMINAL TO GENERATE A NEW CONFIG.JSON
-def SeturlGchat(url):   
+def config():   
     """ # Function to create the connection with Webhook of Google Chat
     # url  is a String"""  
+    
+    while True:
+        urlc = input("WebHook URL from Google Chat: ")
+        check = input("This URL is correct (y/n)?\n"+urlc+"\n")
+        if check == 'y':
+            break
+    
+    while True:
+        anaconda = input("Path of Anaconda3\n(Example: C:/ProgramData/Anaconda3)\n>")
+        if os.path.exists(anaconda):
+            break
+        else:
+            print("Path not founded!!!\n")
+    
+    while True:
+        activate = input("PATH of activated.bat from Anaconda3\n(Example: C:/ProgramData/Anaconda3/Scripts/activate.bat):\n>")
+        if os.path.exists(activate):
+            break
+        else:
+            print("Path not founded!!!\n")
+    
     data = {}
     data['config'] = []
     data['config'].append({
-        'url': url,
+        'url': urlc,
         'thread': "",
+        'anaconda3': anaconda,
+        'activated.bat': activate,
     })
 
     filepath = os.path.join('c:/Send2Gchat', 'config.json')
@@ -110,7 +135,9 @@ def SeturlGchat(url):
     with open(filepath, 'w') as outfile:
         json.dump(data, outfile)
 
-    print('Setting URL: '+url)
+    print('Setting URL: '+urlc)
+    print('Anaconda3 PATH: '+anaconda)
+    print('activated.bat PATH: '+activate)
     print('')
     
     return 0

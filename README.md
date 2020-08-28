@@ -13,9 +13,8 @@ Tip:
 >>> Python 3.7.7 (default, May  6 2020, 11:45:54) [MSC v.1916 64 bit (AMD64)] :: Anaconda, Inc. on win32
 >>> Type "help", "copyright", "credits" or "license" for more information.
 >>>
->>> >>> from Send2Gchat import SeturlGchat
->>> >>> SeturlGchat('URL LINK')
->>> >>> Setting URL: URL LINK
+>>> >>> import Send2Gchat
+>>> >>> Send2Gchat.config()
 >>>
 >>> 0
 >>> >>> quit()
