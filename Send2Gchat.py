@@ -98,12 +98,20 @@ def Send2Gchat(message):
 def config():   
     """ # Function to create the connection with Webhook of Google Chat
     # url  is a String"""  
-    
+    thread = ""
     while True:
         urlc = input("WebHook URL from Google Chat: ")
         check = input("This URL is correct (y/n)?\n"+urlc+"\n")
         if check == 'y':
             break
+    
+    chthread = input("Do you have de thread URL (y/n): ")
+    if chthread == 'y':
+        while True:
+            thread = input("Thread URL:  ")
+            checkt = input("This URL is correct (y/n)?\n"+thread+"\n")
+            if checkt == 'y':
+                break
     
     while True:
         anaconda = input("Path of Anaconda3\n(Example: C:/ProgramData/Anaconda3)\n>")
@@ -123,7 +131,7 @@ def config():
     data['config'] = []
     data['config'].append({
         'url': urlc,
-        'thread': "",
+        'thread': thread,
         'anaconda3': anaconda,
         'activated.bat': activate,
     })
