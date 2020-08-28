@@ -35,8 +35,6 @@ def status(message):
     with open(filepath) as json_file:
         data = json.load(json_file)
         for p in data['config']:
-            print('Anaconda PATH: ' + p['anaconda3'])
-            print('activated.bat PATH: ' + p['activated.bat'])
             print('')
             
     #call the python script to send a message

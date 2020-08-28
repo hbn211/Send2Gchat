@@ -142,8 +142,10 @@ def config():
     
     with open(filepath, 'w') as outfile:
         json.dump(data, outfile)
-
+    
+    print('')
     print('Setting URL: '+urlc)
+    print('Thread: '+thread)
     print('Anaconda3 PATH: '+anaconda)
     print('activated.bat PATH: '+activate)
     print('')
