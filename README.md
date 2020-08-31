@@ -1,4 +1,4 @@
-# Send2Gchat
+# Send2Gchat for HFSS
 
 This script will send the alert to your Google Chat group.
 
