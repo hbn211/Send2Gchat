@@ -3,11 +3,12 @@
 # 16:21:42  ago 27, 2020
 # ----------------------------------------------
 import ScriptEnv
-# import os
 
 import sys
 sys.path.append(r'C:/Send2Gchat')
 import IronDrive
+
+IronDrive.enableHFSSmonitor()
 
 IronDrive.status('Starting simulation...')
 

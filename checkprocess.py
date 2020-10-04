@@ -14,7 +14,7 @@ def check():
     st = "no"
     # time.sleep(60)
     for p in psutil.process_iter(attrs=['pid', 'name']):
-        if p.info['name'] == "chrome.exe":
+        if p.info['name'] == "ansysedt.exe":
             st = "yes"
             break
             #print("yes", (p.info['name']))
@@ -25,6 +25,6 @@ while(1):
     st = check()
     if st == "no":
         break
-    time.sleep(5)#900
+    time.sleep(300)#5min
 IronDrive.status("HFSS was closed!!!")
 print("HFSS was closed!!!")
